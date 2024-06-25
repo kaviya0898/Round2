@@ -1,0 +1,19 @@
+int array[]= {-7, 1, 5, 2, -4, 3, 0};
+		int left=0,right=0;
+		
+		for(int i:array)
+		{
+			left+=i;
+		}
+		for(int i=0;i<array.length;i++)
+		{
+			left-=array[i];
+			
+			if(left==right)
+			{
+				System.out.println(i);
+				break;
+			}
+			right+=array[i];
+		}
+	}
