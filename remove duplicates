@@ -1,0 +1,49 @@
+package pacakge;
+
+public class Class {
+
+	public static void main(String[] args) {
+		
+		String str="Java1234";
+		char letters[]=str.toCharArray();
+		int array[]=new int[127];
+		
+		for(int index=0;index<str.length();index++)
+		{
+			char small=str.charAt(index);
+			boolean isCapital=false;
+			
+			if(str.charAt(index)>='A' && str.charAt(index)<='Z')
+			{
+				small=(char)(small+32);
+				isCapital=true;
+			}
+			int k=1;
+			while(array[small-32]>=1 )
+			{
+				if(small=='z')
+				{
+					small='a';
+				}
+				else if(small=='9')
+				{
+					small='0';
+				}
+				else
+					small++;
+			}
+			array[small-32]++;
+			if(isCapital)
+			{
+				small=(char)(small-32);
+			}
+			letters[index]=small;
+			System.out.print(letters[index]);
+			
+			
+		}
+		
+
+	}
+
+}
