@@ -1,0 +1,24 @@
+  int array[] = {-2, 7, 5, -1, 3, 2, -7};
+        int meh = 0, msf = Integer.MIN_VALUE;
+        int startIndex = 0, endIndex = 0;
+        int currentStart = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            meh += array[i];
+
+            if (meh < array[i]) {
+                meh = array[i];
+                currentStart = i; // Update the current starting index of the subarray
+            }
+
+            if (msf < meh) {
+                msf = meh;
+                startIndex = currentStart; // Update the start index of the maximum sum subarray
+                endIndex = i; // Update the end index of the maximum sum subarray
+            }
+        }
+
+        // Print results
+        System.out.println("Start Index: " + startIndex);
+        System.out.println("End Index: " + endIndex);
+        System.out.println("Maximum Sum: " + msf);
