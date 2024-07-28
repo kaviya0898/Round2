@@ -1,0 +1,18 @@
+public static void main(String[] args) {
+		
+		int n=3;
+		generate(n,"");
+	}
+
+	private static void generate(int n, String string) {
+		
+		if(n==0)
+		{
+			System.out.println(string);
+			return;
+		}
+		generate(n-1,string+"0 ");
+		generate(n-1,string+"1 ");
+		
+	}
+}
